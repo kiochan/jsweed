@@ -5,9 +5,6 @@ import { useEffect, useCallback } from "react";
 
 import React, { useState } from "react";
 import Editor from "react-simple-code-editor";
-import { highlight, languages } from "prismjs/components/prism-core";
-import "prismjs/components/prism-clike";
-import "prismjs/components/prism-javascript";
 import GridLink from "../components/GridLink";
 import Grid from "../components/Grid";
 import axios from "axios";
@@ -15,6 +12,10 @@ import { RandomFileResult } from "./api/random";
 import { FileResult } from "./api/code";
 import Welcome from "../components/Welcome";
 import Code from "../components/Code";
+
+import { highlight, languages } from "prismjs";
+import "prismjs/components/prism-clike";
+import "prismjs/components/prism-javascript";
 
 const CodePage: NextPage = () => {
   const defaultCodeName = "loading.js";
@@ -75,7 +76,7 @@ const CodePage: NextPage = () => {
         <Editor
           value={content}
           onValueChange={setContent}
-          highlight={(code) => highlight(code, languages.js)}
+          highlight={(code) => highlight(code, languages.js, "javascript")}
           padding={10}
           style={{
             color: "#eee",
