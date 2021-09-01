@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next dev -p 80",
-    "start-prod": "next start -p 80",
+    "start": "git pull && pnpm install && next build && next start -p 80",
+    "start-only": "next start -p 80",
     "lint": "next lint"
   },
   "dependencies": {
