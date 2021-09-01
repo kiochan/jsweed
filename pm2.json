@@ -1,0 +1,10 @@
+{
+  "apps": [
+    {
+      "name": "jsweed",
+      "script": "pnpm",
+      "args": "start",
+      "cron_restart": "0 0 */1 * * ?"
+    }
+  ]
+}
