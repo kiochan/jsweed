@@ -4,7 +4,7 @@
       "name": "jsweed",
       "script": "pnpm",
       "args": "start",
-      "cron_restart": "0 0 */1 * * ?"
+      "restart-delay": 3600000
     }
   ]
 }
