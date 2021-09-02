@@ -57,6 +57,7 @@ const CodePage: NextPage = () => {
     } else {
       newCode();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
