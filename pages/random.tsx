@@ -16,6 +16,7 @@ import Code from "../components/Code";
 import { highlight, languages } from "prismjs";
 import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
+import animateScrollTo from "animated-scroll-to";
 
 const CodePage: NextPage = () => {
   const defaultCodeName = "loading.js";
@@ -36,11 +37,13 @@ const CodePage: NextPage = () => {
       if ("error" in res) {
         // TODO: handle error
       } else {
-        setContent(res.content);
-        setTitle(res.title);
-        setName(res.name);
-        setTag(res.tag);
-        window.location.hash = res.name;
+        animateScrollTo(0).then((hasScrolledToPosition) => {
+          setContent(res.content);
+          setTitle(res.title);
+          setName(res.name);
+          setTag(res.tag);
+          window.location.hash = res.name;
+        });
       }
     },
     [name]
