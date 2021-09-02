@@ -1,0 +1,4 @@
+#! /bin/sh
+git pull --ff-only && \
+pnpm build && \
+pm2 restart jsweed
